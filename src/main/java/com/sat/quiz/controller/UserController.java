@@ -1,6 +1,5 @@
 package com.sat.quiz.controller;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,14 +18,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.abcrentals.binu.thankachan.constants.RentalWebsiteConstants;
-import com.abcrentals.binu.thankachan.entity.Address;
-import com.abcrentals.binu.thankachan.entity.AdminProfile;
-import com.abcrentals.binu.thankachan.entity.ContactInfo;
-import com.abcrentals.binu.thankachan.entity.EmployerInfo;
-import com.abcrentals.binu.thankachan.entity.User;
-import com.abcrentals.binu.thankachan.service.UserService;
-import com.sat.quiz.user.AdminUserProfile;
+import com.sat.quiz.constants.SATQuizConstants;
+import com.sat.quiz.entity.User;
+import com.sat.quiz.service.UserService;
 
 /*
  * Controller class to specify handler methods for User class functions
@@ -96,7 +90,7 @@ public class UserController {
 		
 	    Map<Integer, String> userAccessTypeList = new HashMap<Integer, String>();
 	    int i=0;
-	    for(String str: RentalWebsiteConstants.USER_ACCESS_TYPES) {
+	    for(String str: SATQuizConstants.USER_ACCESS_TYPES) {
 	    	userAccessTypeList.put(i++, str);
 	    }
 
