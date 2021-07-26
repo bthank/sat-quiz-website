@@ -2,7 +2,7 @@ package com.sat.quiz.dao;
 
 import java.util.List;
 
-import com.abcrentals.binu.thankachan.entity.User;
+import com.sat.quiz.entity.User;
 
 /*
  * Interface used for DAO access method declaration for User entity class

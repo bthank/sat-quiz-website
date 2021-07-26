@@ -10,9 +10,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.access.AccessDeniedHandler;
-import org.springframework.web.servlet.DispatcherServlet;
 
-import com.abcrentals.binu.thankachan.service.UserService;
+import com.sat.quiz.service.UserService;
 
 /*
  * Class to set up the Spring Security environment for processing and restrict access to resources

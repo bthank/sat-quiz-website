@@ -1,10 +1,10 @@
 package com.sat.quiz.service;
 
-import com.abcrentals.binu.thankachan.dao.RoleDao;
-import com.abcrentals.binu.thankachan.dao.UserDao;
-import com.abcrentals.binu.thankachan.entity.Role;
-import com.abcrentals.binu.thankachan.entity.User;
-import com.sat.quiz.user.CrmUser;
+import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -15,11 +15,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-import java.util.stream.Collectors;
+import com.sat.quiz.dao.RoleDao;
+import com.sat.quiz.dao.UserDao;
+import com.sat.quiz.entity.Role;
+import com.sat.quiz.entity.User;
+import com.sat.quiz.user.CrmUser;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -67,21 +67,10 @@ public class UserServiceImpl implements UserService {
 		user.setUserName(crmUser.getUserName());
 		user.setPassword(passwordEncoder.encode(crmUser.getPassword()));
 		
-		if(user.getNamePrefix() == null) {
-			user.setNamePrefix("");
-		} else {
-			user.setNamePrefix(crmUser.getNamePrefix());
-		}
 		
 		user.setFirstName(crmUser.getFirstName());
 		user.setLastName(crmUser.getLastName());
 		
-		if(user.getNameSuffix() == null) {
-			user.setNameSuffix("");
-		} else {
-			user.setNameSuffix(crmUser.getNameSuffix());
-		}
-
 		user.setEmail(crmUser.getEmail());
 
 		// give user default role of "renter"
@@ -91,10 +80,6 @@ public class UserServiceImpl implements UserService {
 		
 		user.setCreationDate(LocalDate.now());
 		
-		user.setFirstAndLastName(crmUser.getFirstName() + " " + crmUser.getLastName());
-		String fullname = crmUser.getNamePrefix() + " " + crmUser.getFirstName() + " " + crmUser.getLastName() + crmUser.getNameSuffix();
- 		user.setFullName(fullname.trim());
-
 		 // save user in the database
 		userDao.save(user);
 	}

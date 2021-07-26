@@ -12,8 +12,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 
-import com.abcrentals.binu.thankachan.service.UserService;
 import com.sat.quiz.entity.User;
+import com.sat.quiz.service.UserService;
 
 
 /*

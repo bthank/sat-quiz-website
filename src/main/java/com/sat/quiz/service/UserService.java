@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.security.core.userdetails.UserDetailsService;
 
-import com.abcrentals.binu.thankachan.entity.User;
+import com.sat.quiz.entity.User;
 import com.sat.quiz.user.CrmUser;
 
 /*
